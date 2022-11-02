@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: index
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+        server-addr: 192.168.2.104:80

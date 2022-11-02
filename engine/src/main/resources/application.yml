@@ -1,0 +1,31 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: engine
+  cloud:
+    nacos:
+      discovery:
+        # 配置中心服务器地址，也就是Nacos地址,这里用nginx做LB
+        server-addr: 192.168.2.104:80
+        ephemeral: false
+        cluster-name: chongqing
+        # 权重大小，越大越优先调用，默认为1
+        weight: 1
+    # 将loadbalancer的nacos支持开启，集成Nacos负载均衡
+    loadbalancer:
+      nacos:
+        enabled: true
+    sentinel:
+      transport:
+        # 添加监控页面地址即可
+        dashboard: localhost:8858
+      block-page: /gateway/engine/blocked
+feign:
+  circuitbreaker:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
