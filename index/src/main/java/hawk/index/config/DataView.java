@@ -1,5 +1,6 @@
 package hawk.index.config;
 
+import hawk.common.core.FieldProperties;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import java.io.*;
@@ -41,8 +42,9 @@ public class DataView {
                 boolean present = values[2].trim().equals("1")?true:false;
                 Short beIndex = Short.parseShort(values[3].trim());
                 Float weight = Float.parseFloat(values[4].trim());
+                Short type = Short.parseShort(values[5].trim());
                 nameToID.put(name,id);
-                FieldProperties fieldProperties = new FieldProperties(id, name, present, beIndex, weight);
+                FieldProperties fieldProperties = new FieldProperties(id, name, present, beIndex, weight, type);
                 IDToFieldProps.put(id,fieldProperties);
                 line = reader.readLine();
             }

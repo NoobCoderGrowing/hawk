@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface Anlyzer {
     public List<Token> tokenize(String sentence);
+
+    public void init();
 }

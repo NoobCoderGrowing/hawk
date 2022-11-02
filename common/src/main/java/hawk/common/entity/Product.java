@@ -3,9 +3,9 @@ import lombok.Data;
 
 @Data
 public class Product {
-    long product_id;
-    String product_name;
-    String category;
-    long category_id;
-    double price;
+    public long product_id;
+    public String product_name;
+    public String category;
+    public long category_id;
+    public float price;
 }

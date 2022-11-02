@@ -19,9 +19,14 @@ public class IndexApplication {
         SpringApplication.run(IndexApplication.class, args);
     }
 
-    @Bean
-    public AtomicInteger atomicLock(){
+    @Bean("CASLock")
+    public AtomicInteger getAtomicLock(){
         return new AtomicInteger(0);
+    }
+
+    @Bean("autoIncreDocumentID")
+    public AtomicInteger getAtomicDocId(){
+        return new AtomicInteger(-1);
     }
 
     @Bean("indexExecutor")

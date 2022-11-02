@@ -1,4 +1,4 @@
-package hawk.index.config;
+package hawk.common.core;
 
 import lombok.Data;
 
@@ -15,11 +15,14 @@ public class FieldProperties {
 
     private float weight;
 
-    public FieldProperties(short id, String name, boolean present, short beIndex, float weight) {
+    private short type;
+
+    public FieldProperties(short id, String name, boolean present, short beIndex, float weight, short type) {
         this.id = id;
         this.name = name;
         this.present = present;
         this.beIndex = beIndex;
         this.weight = weight;
+        this.type = type;
     }
 }

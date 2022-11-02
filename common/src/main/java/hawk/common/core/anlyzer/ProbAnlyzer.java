@@ -15,4 +15,9 @@ public class ProbAnlyzer implements Anlyzer{
     public ArrayList<Token> tokenize (String sentence){
         return new ArrayList<>();
     }
+
+    @Override
+    public void init() {
+
+    }
 }

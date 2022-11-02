@@ -28,6 +28,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class IndexFlow {
 
     @Resource
+    @Qualifier("CASLock")
     AtomicInteger CASLock;
 
     @Resource
